@@ -14,7 +14,10 @@ def process_numbers(numbers):
 
     # Calculate the average
     average = sum(numbers) / len(numbers)
-    avg_message = f"<p>Average: {average:.2f}. {'Greater than 50' if average > 50 else '50 or below'}.</p>"
+    if average > 50:
+        avg_message = f"<p>Average: {average:.2f}. It is greater than 50.</p>"
+    else:
+        avg_message = f"<p>Average: {average:.2f}. It is below or equal to 50.</p>"
 
     # Bitwise operation to check if the count of positive numbers is even or odd
     positive_count = sum(1 for num in numbers if num > 0)
